@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingApp.API.Controllers
@@ -11,6 +12,7 @@ namespace DatingApp.API.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -18,6 +20,7 @@ namespace DatingApp.API.Controllers
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
